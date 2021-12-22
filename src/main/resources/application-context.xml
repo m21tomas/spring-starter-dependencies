@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Bean definitions goes there -->
+
+	<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA">
+      <property name="message" value="ServiceA" />
+    </bean>
+    <!-- autowire="byType" -->
+    <bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB" >
+      <constructor-arg ref="serviceABean"/>
+    </bean>
+    
+    <bean id="serviceCBean" class="lt.itmokymai.spring.ServiceC" parent="serviceABean" />
+    
+    <bean id="ProductBean" class="lt.itmokymai.spring.Product" >
+    	<property name="title" value = "Acer Computer" />
+        <property name="image" value = "https://static-ecpa.acer.com/media/catalog/product/cache/ff88d7a91867f4b521dad69a110ffebf/a/c/acer-nitro-5_an515-44_rgb-kb_modelmain.png" />
+        <property name="description" value = "Nitro 5 Gaming Laptop - AN515-45-R92M" />
+        <property name="price" value = "1500" />
+        <property name="quantity" value = "3" />
+    </bean>
+    
+    <bean id="Products" class="lt.itmokymai.spring.ServiceC">
+      <property name="lists">
+        <list>
+          <ref bean="ProductBean" />
+        </list>
+      </property>
+    </bean>
+    
+</beans>
