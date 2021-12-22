@@ -4,16 +4,21 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd">
 <!-- Bean definitions goes there -->
-
+    <!-- 
 	<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA">
       <property name="message" value="ServiceA" />
     </bean>
-    <!-- autowire="byType" -->
-    <bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB" >
-      <constructor-arg ref="serviceABean"/>
+    -->
+    <bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB" autowire="constructor">
+       <!-- <constructor-arg ref="serviceABean"/> -->
+       <!-- <property name="serviceA" ref="serviceABean"></property> -->
     </bean>
     
-    <bean id="serviceCBean" class="lt.itmokymai.spring.ServiceC" parent="serviceABean" />
+      
+    <bean id="serviceCBean" class="lt.itmokymai.spring.ServiceC" >
+      <property name="message" value="ServiceC" />
+    </bean>
+    
     
     <bean id="ProductBean" class="lt.itmokymai.spring.Product" >
     	<property name="title" value = "Acer Computer" />
@@ -22,7 +27,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
         <property name="price" value = "1500" />
         <property name="quantity" value = "3" />
     </bean>
-    
+    <!--  
     <bean id="Products" class="lt.itmokymai.spring.ServiceC">
       <property name="lists">
         <list>
@@ -30,5 +35,5 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
         </list>
       </property>
     </bean>
-    
+    -->
 </beans>

@@ -2,17 +2,22 @@ package lt.itmokymai.spring;
 
 public class ServiceB {
 	
-	private ServiceA serviceA;
+	private ServiceC some_service;
 	
-	public ServiceB (ServiceA serviceA) {
-		this.serviceA = serviceA;
+	public ServiceB(ServiceC some_service) {
+		super();
+		this.some_service = some_service;
 	}
-	
-	public void setServiceA(ServiceA serviceA) {
-		this.serviceA = serviceA;
+
+	public ServiceC getSome_service() {
+		return some_service;
 	}
-	
+
+	public void setSome_service(ServiceC some_service) {
+		this.some_service = some_service;
+	}
+
 	public String getResult () {
-		return "ServiceB result: " + serviceA.getResult();
+		return "ServiceB result: " + some_service.getResult() ;
 	}
 }

@@ -1,13 +1,13 @@
 package lt.itmokymai.spring;
 
 public class ServiceA {
-	private String messa;
+	private String text;
 	
 	public String getResult() { return getMessage(); }
 	
-	public String getMessage() { return messa; }
+	public String getMessage() { return text; }
 	
-	public void setMessage(String messag) {
-		this.messa = messag;
+	public void setMessage(String text) {
+		this.text = text;
 	}
 }

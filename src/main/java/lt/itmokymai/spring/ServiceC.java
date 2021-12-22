@@ -2,7 +2,7 @@ package lt.itmokymai.spring;
 
 import java.util.List;
 
-public class ServiceC extends ServiceA {
+public class ServiceC extends ServiceA{
 	
 	private List<Product> lists;
 	

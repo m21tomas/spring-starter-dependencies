@@ -10,21 +10,21 @@ public class App
     {
     	ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
     	
-    	ServiceA serviceA = (ServiceA) context.getBean("serviceABean");
+    	//ServiceA serviceA = (ServiceA) context.getBean("serviceABean");
     	
     	ServiceB serviceB = (ServiceB) context.getBean("serviceBBean");
     	
     	ServiceC serviceC = (ServiceC) context.getBean("serviceCBean");
     	
-    	ServiceC products = (ServiceC) context.getBean("Products");
+    	//ServiceC products = (ServiceC) context.getBean("Products");
     	
-    	System.out.println(serviceA.getResult());
+    	//System.out.println(serviceA.getResult());
     	
     	System.out.println(serviceB.getResult());
     	
     	System.out.println(serviceC.getResult());
     	
-    	System.out.println(products.getLists());
+    	//System.out.println(products.getLists());
     	
     	((ConfigurableApplicationContext) context).close();	
     }
